@@ -50,24 +50,30 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-void f_chrp(stack_t **head, unsigned int counter)
-void f_comp(stack_t **head, unsigned int counter)
-void f_divd(stack_t **head, unsigned int counter)
-int exec(char *content, stack_t **stack, unsigned int counter, FILE *file)
-void f_prnt(stack_t **head, unsigned int counter)
-void f_prntfs(stack_t **head, unsigned int counter)
-void f_psh(stack_t **head, unsigned int counter)
-void f_rtrt(stack_t **head, __attribute__((unused)) unsigned int counter)
-void f_totl(stack_t **head, unsigned int counter)
-void f_chain(stack_t **head, unsigned int counter)
-void free_stk(stack_t *head)
-void mltply(stack_t **head, unsigned int counter)
-void f_stk(stack_t **head, unsigned int counter)
-void f_prnt3(stack_t **head, unsigned int counter)
-void f_prnt4(stack_t **head, unsigned int counter)
-void f_rtr(stack_t **head, __attribute__((unused)) unsigned int counter)
-void f_rtr1(stack_t **head,  __attribute__((unused)) unsigned int counter)
-void f_sbtr(stack_t **head, unsigned int counter)
-void f_tot2(stack_t **head, int n)
-
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
+void f_push(stack_t **head, unsigned int number);
+void f_pall(stack_t **head, unsigned int number);
+void f_pint(stack_t **head, unsigned int number);
+void f_chrp(stack_t **head, unsigned int counter);
+void f_comp(stack_t **head, unsigned int counter);
+void f_divd(stack_t **head, unsigned int counter);
+int exec(char *content, stack_t **stack, unsigned int counter, FILE *file);
+void f_prnt(stack_t **head, unsigned int counter);
+void f_prntfs(stack_t **head, unsigned int counter);
+void f_psh(stack_t **head, unsigned int counter);
+void f_rtrt(stack_t **head, __attribute__((unused)) unsigned int counter);
+void f_totl(stack_t **head, unsigned int counter);
+void f_chain(stack_t **head, unsigned int counter);
+void free_stk(stack_t *head);
+void mltply(stack_t **head, unsigned int counter);
+void f_stk(stack_t **head, unsigned int counter);
+void f_prnt3(stack_t **head, unsigned int counter);
+void f_prnt4(stack_t **head, unsigned int counter);
+void f_rtr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void f_rtr1(stack_t **head,  __attribute__((unused)) unsigned int counter);
+void f_sbtr(stack_t **head, unsigned int counter);
+void f_tot1(stack_t **head, int n);
+void f_tot2(stack_t **head, unsigned int counter)
 #endif

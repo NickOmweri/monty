@@ -13,20 +13,20 @@ int exec(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
-		{"pop", f_pop},
-		{"swap", f_swap},
-		{"add", f_add},
-		{"nop", f_nop},
+		{"pop", f_stk},
+		{"swap", f_tot1},
+		{"add", f_tot1},
+		{"nop", f_comp},
 		{"sub", f_sub},
 		{"sub", f_sub},
-		{"mul", f_mul},
+		{"mul", mltply},
 		{"mod", f_mod},
-		{"pchar", f_pchar},
-		{"pstr", f_pstr},
-		{"rotl", f_rotl},
-		{"rotr", f_rotr},
+		{"pchar", u_char},
+		{"pstr", f_sbtr},
+		{"rotl", f_tot1},
+		{"rotr", f_rtr},
 		{"queue", f_queue},
-		{"stack", f_stack},
+		{"stack", stack},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
@@ -48,7 +48,7 @@ int exec(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
-		free_stack(*stack);
+		free_stk(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }
