@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * f_totl - It adds the top two elements of the stack.
+ * f_tot - It adds the top two elements of the stack.
  * @counter: Is the line number.
  * @head: Is the stack head.
  * Return: Nothing.
  */
 
-void f_totl(stack_t **head, unsigned int counter)
+void f_tot(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
